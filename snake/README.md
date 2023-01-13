@@ -4,28 +4,21 @@
 
 ```
 #include <windows.h> 
+#include <ctime>
 #include <cstring>
 #include <iostream>
 
 using namespace std;
 
-void gotoxy(short x, short y)
-{
-    /*COORD position = { x, y };
-    HANDLE hOut = GetStdHandle(STD_OUTPUT_HANDLE);
-    SetConsoleCursorPosition(hOut, position);*/
-	COORD pos;
-	pos.X=x;
-	pos.Y=y;
-	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE),pos);
-}
-
 string name;
+int bExit=1; 
+
+void gotoxy(short x, short y);
 
 int main(){
 
-	SetConsoleTitle("My God!");
-	//SetConsoleTitle("window");
+	/////interface/////
+	SetConsoleTitle("snake game 230112");
 	
 	gotoxy(20,11);
 	cout<<"first draft"<<endl;
@@ -40,9 +33,28 @@ int main(){
 	cout<<"game start";
 	cin.get();
 	cin.get();
+	system("cls");
+	
+	while(!bExit){//Gaming
 	
 	
-return 0;
+	}
+	gotoxy(30, 10);//Gamw over
+    cout << "Game Over!!!";
+    //Sleep(2000);
+    gotoxy(28, 12);
+    system("pause");
+    return 0;
 }
 
+void gotoxy(short x, short y)
+{
+    /*COORD position = { x, y };
+    HANDLE hOut = GetStdHandle(STD_OUTPUT_HANDLE);
+    SetConsoleCursorPosition(hOut, position);*/
+	COORD pos;
+	pos.X=x;
+	pos.Y=y;
+	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE),pos);
+}
 ```
