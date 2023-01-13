@@ -1,4 +1,7 @@
 
+
+### first
+
 ```
 
 #include <iostream>
@@ -28,3 +31,84 @@ int main(){
  
 
 ```
+
+### second 
+
+```
+
+
+#include <iostream>
+#include <cstring>
+#include <ctime>
+#include <windows.h>
+#include <conio.h>
+
+using namespace std;
+
+#define M 16
+#define maxlength 100
+
+struct item{
+	int x,y;
+	char c;
+};
+
+item snake[maxlength],apple,/*fence*/;
+
+int length=0;//need to notice 
+int bExit=0;
+
+snake[0].c='S';
+apple.c='A';
+
+void gotoxy(short x, short y)
+{
+    /*COORD position = { x, y };
+    HANDLE hOut = GetStdHandle(STD_OUTPUT_HANDLE);
+    SetConsoleCursorPosition(hOut, position);*/
+	COORD pos;
+	pos.X=x;
+	pos.Y=y;
+	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE),pos);
+}
+
+void draw(int x,int y,char c){
+	gotoxy(x,y);
+	cout<<c;
+}
+
+void drawApple(int x,int y){
+	draw()
+}
+
+void drawFence(){
+	int i,j;
+	for(i=0;i<M;i++){
+		for(j=0;j<M;j++){
+			
+			if(i==0||i==M-1)	draw(i,j,'*');
+			else if(j==0||j==M-1)	draw(i,j,'*');
+		}
+	}
+}
+
+int main(){
+	
+	init();
+	while(!bExit){
+		
+		sleep(delay_time);
+		if(kbhit())	key_control;
+		drawApple();
+		moveSnake();//apple eaten,bounndary detection,moving
+	}
+	
+	return 0;
+	
+	
+}
+
+ ```
+
+
+
