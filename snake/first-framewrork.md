@@ -33,6 +33,25 @@ int main(){
 
 ```
 
+### gotoxy
+
+``` #include <windows.h> ``` required
+
+```
+
+void gotoxy(short x, short y)
+{
+    /*COORD position = { x, y };
+    HANDLE hOut = GetStdHandle(STD_OUTPUT_HANDLE);
+    SetConsoleCursorPosition(hOut, position);*/
+	COORD pos;
+	pos.X=x;
+	pos.Y=y;
+	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE),pos);
+}
+
+```
+
 ### Almost done,then finish snake moving.
 
 ```
