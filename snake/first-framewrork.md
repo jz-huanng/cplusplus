@@ -45,21 +45,21 @@ int main(){
 
 using namespace std;
 
-#define M 16
+#define M 22
 #define maxlength 100
 
 struct item{
 	int x,y;
-	char c;
-};
+	char c='T';
+};	
 
-item snake[maxlength],apple,/*fence*/;
+item snake[maxlength];
+item apple/*,fence*/;
 
 int length=0;//need to notice 
+int rdm;
+int delay_time=500;
 int bExit=0;
-
-snake[0].c='S';
-apple.c='A';
 
 void gotoxy(short x, short y)
 {
@@ -77,8 +77,8 @@ void draw(int x,int y,char c){
 	cout<<c;
 }
 
-void drawApple(int x,int y){
-	draw()
+void drawApple(){
+	draw(apple.x,apple.y,apple.c);
 }
 
 void drawFence(){
@@ -92,19 +92,36 @@ void drawFence(){
 	}
 }
 
+void key_control(){
+	
+}
+
+void init(){
+	snake[0].c='S';
+	apple.c='A';	
+	drawFence();
+	srand((unsigned)time(NULL));
+	
+	
+}
+
+void moveSnake(){
+
+}
+
 int main(){
 	
+
 	init();
 	while(!bExit){
 		
-		sleep(delay_time);
+		Sleep(delay_time);
 		if(kbhit())	key_control;
 		drawApple();
 		moveSnake();//apple eaten,bounndary detection,moving
 	}
 	
 	return 0;
-	
 	
 }
 
