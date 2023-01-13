@@ -32,7 +32,7 @@ int main(){
 
 ```
 
-### second 
+### Almost done,then finish snake moving.
 
 ```
 
@@ -49,7 +49,7 @@ using namespace std;
 #define maxlength 100
 
 struct item{
-	int x,y;
+	int x=5,y=5;
 	char c='T';
 };	
 
@@ -72,12 +72,25 @@ void gotoxy(short x, short y)
 	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE),pos);
 }
 
+int IsTXR(int x,int y){
+	int i;
+	for(i=0;i<=length;i++){
+		if(apple.x==snake[i].x&&apple.y==snake[i].y)	return 1;
+	}
+	return 0;
+} 
+
 void draw(int x,int y,char c){
 	gotoxy(x,y);
 	cout<<c;
 }
 
 void drawApple(){
+	
+	do{
+		apple.x=rand()%(M-4)+3;
+		apple.y=rand()%(M-4)+3;
+	}while(IsTXR(apple.x,apple.y));
 	draw(apple.x,apple.y,apple.c);
 }
 
@@ -100,18 +113,20 @@ void init(){
 	snake[0].c='S';
 	apple.c='A';	
 	drawFence();
-	srand((unsigned)time(NULL));
+	//snake[0].x=rand()%(M-4)+3;
+	//snake[0].y=snake[0].x;
+	draw(snake[0].x,snake[0].y,snake[0].c);
 	
 	
 }
 
 void moveSnake(){
-
+	Sleep(10000);
 }
 
 int main(){
 	
-
+	srand((unsigned)time(NULL));
 	init();
 	while(!bExit){
 		
@@ -124,6 +139,8 @@ int main(){
 	return 0;
 	
 }
+
+ 
 
  ```
 
