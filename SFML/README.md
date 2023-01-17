@@ -33,3 +33,12 @@ int main(){
 }
 
 ```
+
+```
+	Texture tile;
+	tile.loadFromFile("images/tiles.png");
+	
+	Sprite s(tile);
+	
+	window.draw(s);
+```
