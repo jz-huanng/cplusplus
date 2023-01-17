@@ -42,3 +42,18 @@ int main(){
 	
 	window.draw(s);
 ```
+
+```
+	int n=3;
+	
+	for(int i=0;i<4;i++){
+		a[i].x=figures[n][i]%2;
+		a[i].y=figures[n][i]/2;
+	}
+
+	for(int i=0;i<4;i++){
+		s.setPosition(a[i].x*18,a[i].y*18);
+		window.draw(s);
+	}
+
+```
