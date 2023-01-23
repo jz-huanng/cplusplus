@@ -4,8 +4,8 @@
 ---
 <br>
 **Just for this->**
+
 ![](https://github.com/jz-huanng/cplusplus/blob/main/SFML/jump.png?raw=true)<br>
-![](https://github.com/jz-huanng/AI-course/blob/gh-pages/images2/parking-detection/labels.png?raw=true)
 
 ```
 
