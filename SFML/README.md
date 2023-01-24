@@ -11,7 +11,9 @@ download at: https://www.sfml-dev.org/download.php
 
 ```
 
+#include <iostream>
 #include <SFML/Graphics.hpp>
+#include <SFML/Window.hpp>
 #include <ctime>
 
 using namespace sf;
